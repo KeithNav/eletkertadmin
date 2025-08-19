@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "piacoks",
+  "info": {
+    "singularName": "piacok",
+    "pluralName": "piacoks",
+    "displayName": "piacok"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "marketName": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

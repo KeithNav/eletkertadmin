@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "asdasds",
+  "info": {
+    "singularName": "asdasd",
+    "pluralName": "asdasds",
+    "displayName": "asdasd"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
