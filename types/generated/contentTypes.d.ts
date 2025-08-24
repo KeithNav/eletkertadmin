@@ -432,6 +432,34 @@ export interface ApiPiacokPiacok extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPicturePicture extends Struct.SingleTypeSchema {
+  collectionName: 'pictures';
+  info: {
+    displayName: 'picture';
+    pluralName: 'pictures';
+    singularName: 'picture';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    kep: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::picture.picture'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -943,6 +971,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::asdasd.asdasd': ApiAsdasdAsdasd;
       'api::piacok.piacok': ApiPiacokPiacok;
+      'api::picture.picture': ApiPicturePicture;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
