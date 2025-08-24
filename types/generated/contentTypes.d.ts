@@ -425,6 +425,7 @@ export interface ApiPiacokPiacok extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     marketName: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    street: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

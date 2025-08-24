@@ -19,6 +19,10 @@
       "type": "string",
       "required": true
     },
+    "street": {
+      "type": "string",
+      "required": true
+    },
     "marketName": {
       "type": "string",
       "required": true
