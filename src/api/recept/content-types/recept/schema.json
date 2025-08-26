@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recepts",
+  "info": {
+    "singularName": "recept",
+    "pluralName": "recepts",
+    "displayName": "recept"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nev": {
+      "type": "string",
+      "required": true
+    },
+    "rovid": {
+      "type": "string",
+      "required": true
+    },
+    "hozzavalok": {
+      "type": "text",
+      "required": true
+    },
+    "teljes": {
+      "type": "text",
+      "required": true
+    },
+    "kep": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

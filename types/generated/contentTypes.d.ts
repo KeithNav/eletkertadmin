@@ -460,6 +460,38 @@ export interface ApiPicturePicture extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiReceptRecept extends Struct.CollectionTypeSchema {
+  collectionName: 'recepts';
+  info: {
+    displayName: 'recept';
+    pluralName: 'recepts';
+    singularName: 'recept';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hozzavalok: Schema.Attribute.Text & Schema.Attribute.Required;
+    kep: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::recept.recept'
+    > &
+      Schema.Attribute.Private;
+    nev: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    rovid: Schema.Attribute.String & Schema.Attribute.Required;
+    teljes: Schema.Attribute.Text & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -972,6 +1004,7 @@ declare module '@strapi/strapi' {
       'api::asdasd.asdasd': ApiAsdasdAsdasd;
       'api::piacok.piacok': ApiPiacokPiacok;
       'api::picture.picture': ApiPicturePicture;
+      'api::recept.recept': ApiReceptRecept;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
