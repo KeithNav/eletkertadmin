@@ -20,8 +20,7 @@
       "required": true
     },
     "hozzavalok": {
-      "type": "text",
-      "required": true
+      "type": "richtext"
     },
     "teljes": {
       "type": "text",
@@ -33,6 +32,16 @@
       "required": true,
       "allowedTypes": [
         "images"
+      ]
+    },
+    "kategoria": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "édességek",
+        "lekvárok",
+        "szörpök",
+        "főételek"
       ]
     }
   }

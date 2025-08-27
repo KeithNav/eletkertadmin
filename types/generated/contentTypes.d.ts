@@ -474,7 +474,16 @@ export interface ApiReceptRecept extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hozzavalok: Schema.Attribute.Text & Schema.Attribute.Required;
+    hozzavalok: Schema.Attribute.RichText;
+    kategoria: Schema.Attribute.Enumeration<
+      [
+        '\u00E9dess\u00E9gek',
+        'lekv\u00E1rok',
+        'sz\u00F6rp\u00F6k',
+        'f\u0151\u00E9telek',
+      ]
+    > &
+      Schema.Attribute.Required;
     kep: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
